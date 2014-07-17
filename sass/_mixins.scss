@@ -1,0 +1,50 @@
+// *********************************************************************************************************
+// 		_mixins.scss
+// 		SASS partial file for medicinecreek wordpress theme
+//		Dorian Sutton 2014
+// 		Useful mixins from various sources
+// *********************************************************************************************************
+
+// *********************************************************************************************************
+//		TABLE OF CONTENTS:
+// *********************************************************************************************************
+//
+//		1.00 - Sticky Footer
+//
+
+
+// *********************************************************************************************************
+// 		1.00 - Sticky Footer mixin
+// 		By Zoe Rooney
+// 		Parameters need to be set to correct class/id names for theme
+// *********************************************************************************************************
+ 
+@mixin sticky-footer($footer-height, $wrapper-selector: unquote("#page"), $container-selector: unquote(".site-content"), $footer-selector: unquote(".site-footer")) {
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+  	margin: 0px;
+  	padding: 0px;
+  }
+  
+  #{$wrapper-selector} {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -$footer-height;
+    
+	#{$container-selector} {
+      padding-bottom: $footer-height;
+    }
+	
+  }
+  
+  #{$footer-selector} {
+    height: $footer-height; 
+  }
+
+}
+

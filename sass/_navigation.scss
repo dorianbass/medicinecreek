@@ -1,0 +1,104 @@
+// ********************************************************************************************************* 
+// 		_navigation.scss
+// 		SASS partial file for medicinecreek wordpress theme
+//		Dorian Sutton 2014
+// 		Contains all css rules for links, main menu and mobile menu
+// *********************************************************************************************************
+	
+// *********************************************************************************************************
+//	Common Menu Styles
+// *********************************************************************************************************
+	
+.main-navigation {
+	background-color: black;
+	clear: both;
+	display: block;
+	font-size: 1.2em;
+	min-height: 1.5em;
+	margin: 0 auto 1.5em;
+	width: 100%;
+}
+
+.menu-menu-container {
+	display: block;
+}
+
+.menu a {
+	color: white;
+	display: inline;
+	text-decoration: none;
+	&:visited { color: white; }
+}
+
+// *********************************************************************************************************
+//	Small Viewport Menu
+// *********************************************************************************************************
+
+.hamburger {
+	margin: 0 1em;
+	text-align: left;
+	a {
+		color: white;	
+		text-decoration: none;
+		&:hover { cursor: pointer; }
+		&:hover, &:visited { text-decoration: none; }
+	}
+}
+
+.main-navigation ul {
+	left: -1000px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+.main-navigation li {
+	border-top: 1px solid white;
+	display: inline-block;
+	padding: 0 0 0 2em;
+	line-height: 2em;
+	width: 100%;
+	&:last-of-type { border-bottom: 1px solid white; }
+	&:hover { background-color: grey; }
+}
+		
+.menu-visible {
+	position: static !important;
+}		
+		
+// *********************************************************************************************************
+//	Main Menu (shown over 630px)
+// *********************************************************************************************************
+
+@media screen and (min-width: 630px) {
+
+	.hamburger { display: none; }
+
+	.main-navigation { text-align: center; }
+	
+	.main-navigation a:hover { opacity: 0.5; }
+	
+	.current-menu-item a {
+		
+		opacity: 0.5;
+		&:hover { opacity: 0.5; }
+		
+	}
+	
+	.main-navigation ul {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		position: static;
+	}
+
+	.main-navigation li {
+		border: none;
+		display: inline;
+		padding: 0 1em 0 1em;
+		&:last-of-type { border-bottom: none; }
+		&:hover { background-color: black; }
+	}
+	
+}

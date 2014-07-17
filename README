@@ -1,0 +1,12 @@
+medicinecreek wordpress theme
+
+Here is the the theme directory of the Medicine Creek website, which is online at medicinecreek.co.uk
+
+It is a highly customised theme which was mostly built from scratch, using a few elements of the 'underscores' starter theme and some code from previous projects.  SASS, Compass and Susy (for responsive grids) are required, and the only plugin used is 'Contact Form 7' for the Contact page.
+
+I am sharing this repository to provide an example of my coding abilities.  It is not intended to be used as either a free or commercial wordpress theme for other projects.  However, please feel free to borrow and modify any bits which interest you.
+
+All feedback and constructive criticism is very welcome.
+
+Dorian Sutton
+July 2014

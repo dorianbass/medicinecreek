@@ -1,0 +1,152 @@
+/*
+Theme Name: medicinecreek
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: medicinecreek
+Domain Path: /languages/
+Tags:
+*/
+
+// Import Compass extentions, if needed
+@import "compass";
+
+// Import project partials
+@import "base";
+@import "mixins";
+@import "grid";
+@import "navigation";
+@import "fonts";
+@import "containers";
+
+// *********************************************************************************************************
+//		General page styles
+// *********************************************************************************************************
+
+#page {
+	background-image: url('img/pine_bg.jpg');
+	font-family: 'open_sansregular', Arial, sans-serif;
+	font-weight: 300;
+	overflow: hidden;
+	width: 100%;
+}
+
+// *********************************************************************************************************
+//		Header styles
+// *********************************************************************************************************
+
+.header-img {
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	background-size: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: url('img/logo.png');
+	
+	// Swap out main logo for minature logo at 480px (mobile phone) and below
+	
+	@media only screen and (max-width: 480px) {
+		background-image: url('img/logo_small.png');		
+	}
+	
+}
+
+.header-img-inner {
+	display: block;
+	height: 0;
+	padding-top: 34.3%;
+	
+	@media only screen and (max-width: 480px) {
+		padding-top: 27.8%;
+	}
+	
+}
+
+// *********************************************************************************************************
+//		Footer styles
+// *********************************************************************************************************
+
+@include sticky-footer(5em);
+
+.site-footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+// *********************************************************************************************************
+//		Text styles
+// *********************************************************************************************************
+
+h2 {
+	font-family: 'wc_roughtrad_btaregular', Arial, sans-serif;
+	font-size: 1.5em;
+	font-weight: 200;
+	margin: 1em 0;
+}
+
+h2:first-of-type {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.first-heading {
+	margin-top: -1em;
+}
+
+.headline {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	padding-top: 0;
+}
+
+.story-date {
+	font-size: 0.8em;
+	text-decoration: italic;
+}
+
+// *********************************************************************************************************
+//		Image styles
+// *********************************************************************************************************
+
+.resp-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.photo {
+	@include box-shadow();
+	@include rotate(5deg);
+	-webkit-backface-visibility: hidden;
+	padding: 2.5%;
+	background-color: white;
+	margin-bottom: 1em;
+}
+
+
+// *********************************************************************************************************
+//	Links (not in main navigation)
+// *********************************************************************************************************
+
+.site-content {
+
+	a {
+		color: #404040; 
+		text-decoration: bold;
+	}
+
+	a:visited {
+		color: #404040;
+	}
+
+}

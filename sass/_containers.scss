@@ -1,0 +1,121 @@
+// *********************************************************************************************************
+//		_containers.scss
+//		SASS partial file for medicinecreek wordpress theme
+//		Dorian Sutton 2014
+//		Contains css rules for content containers throughout the theme 
+// *********************************************************************************************************
+
+// *********************************************************************************************************
+//		text-box container - used everywhere
+// *********************************************************************************************************
+
+.text-box {
+	@include border-radius(5px);
+	@include box-shadow();
+	background-color: white;
+	opacity: 0.9;
+	padding: 0.3em 1em 0.3em 1em;
+	
+	a {
+		color: #000;
+		text-decoration: underline;
+		&:visited { color: #000; }
+	}
+	
+	p { margin-bottom: 1em; }
+	
+	p:first-child { margin-top: 0.7em; }
+	
+}
+
+.text-box + .text-box {	margin-top: 2em; }
+
+.text-box .button { margin-bottom: 0em; }
+
+.text-box .wpcf7 { margin-top: 1em; }
+
+.text-box .inline_player { margin-bottom: 1em; }
+
+.text-box .twitter-timeline { margin-top: 0.5em; margin-bottom: -0.7em; margin-left: -0.2em; }
+
+// *********************************************************************************************************
+//		Container for email signup form
+// *********************************************************************************************************
+
+.signup-form {
+	padding-top: 0.3em;
+}
+
+// *********************************************************************************************************
+//		Container for Bandcamp music player
+// *********************************************************************************************************
+
+.music-player {
+	border: 0; 
+	height: 621px; 
+	margin-bottom: 1em;
+	width: 350px; 
+}
+
+// *********************************************************************************************************
+//		Containers for 'Upcoming Gigs' section
+// *********************************************************************************************************
+
+.upcoming-row {
+	@include clearfix();
+	display: block;
+	margin-bottom: 0.25em;
+
+		&:nth-of-type(1) {
+			margin-top: 1em;
+		}
+	
+		&:last-of-type {
+			margin-bottom: 1em;
+		}
+}
+
+
+.upcoming-date {
+	display: block;
+	float: left;
+	margin-right: 3em;
+}
+
+.upcoming-text {
+	display: block;
+	float: left;
+}
+
+
+// *********************************************************************************************************
+//		Containers for 'Tour' page
+// *********************************************************************************************************
+
+.gig-row {
+	@include clearfix();
+	padding: 0.5em 0 0.5em 0;	
+}
+
+.gig-row span { display: block; }
+
+.gig-date {
+	border: 1px solid black;
+	float: left;
+	text-align: center;
+	width: 4em;
+	
+	.gig-month {}
+
+	.gig-day {
+		font-size: 1.8em;
+	}
+}
+
+.gig-details {
+	float: left;
+	padding-top: 0.5em;
+	padding-left: 2em;
+}
+
+.gig-detail {}

@@ -1,0 +1,85 @@
+// ********************************************************************************************************* 
+// 		_grid.scss
+// 		SASS partial file for medicinecreek wordpress theme
+//		Dorian Sutton 2014
+// 		Contains grid and layout settings to be imported into screen.css at compile time
+// *********************************************************************************************************
+
+
+// Import Susy Grids and set grid base variables
+@import "susy";
+$total-columns		: 12;
+$column-width		: 4em;
+$gutter-width		: 1em;
+$grid-padding		: $gutter-width;
+$border-box-sizing	: true;
+
+// Breakpoint variables
+$medium				: 47em;
+$large				: 75em;
+
+
+// Outer grid container used on all pages
+
+.site-content {
+	@include container;
+	// @include susy-grid-background;
+}
+
+// Horizontal wrapper container for pages we need to vertically align the columns (e.g. About)
+
+.content-wrapper {
+	@include span-columns(12);
+	margin-bottom: 2em;
+}
+
+// Two inner columns of equal width, used on Home, Live and Contact pages
+
+.content-1 {
+	
+	@include at-breakpoint($medium) {
+		@include span-columns(6,12);
+	}
+	
+}
+
+.content-2 {
+	
+	@include at-breakpoint($medium) {
+		@include span-columns(6 omega,12);	
+	}	
+}
+
+// Two inner columns of 1/3 and 2/3 width, used on About page
+
+.content-3 {
+
+	@include at-breakpoint($medium) {
+		@include span-columns(4,12);
+	}
+
+}
+
+.content-4 {
+
+	@include at-breakpoint($medium) {
+		@include span-columns(8 omega,12);
+	}
+
+}
+
+// Set padding for all grid containers (unless they start with a heading)
+
+.content-1, .content-2, .content-3, .content-4 {
+	padding: 1em 0 2em 0;
+}
+
+// Add extra 1em padding to the left main column (OPTIMIZE LATER)
+
+.content-2 {
+	padding-left: 1em;
+}
+
+.content-1 h2:first-of-type {
+	margin-top: -1em;
+}
