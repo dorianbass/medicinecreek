@@ -22,7 +22,14 @@ function medicinecreek_scripts() {
 	wp_enqueue_script( 'medicinecreek-js', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'medicinecreek_scripts' );
- 
+
+// Enqueue scripts and styles for admin area only
+function medicinecreek_admin() {
+	wp_enqueue_script('jquery-ui-datepicker');
+	wp_enqueue_script('admin-js', get_template_directory_uri() . '/js/admin.js', array( 'jquery', 'jquery-ui-datepicker'), false, true);
+	wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+}
+add_action( 'admin_enqueue_scripts', 'medicinecreek_admin');
 /********************************************************************************************/
 /*	TOUR DATES - 																			*/
 /* 	Functions to create custom post type and custom fields for tour dates					*/ 
@@ -92,7 +99,7 @@ function tour_date_box_content( $post ) {
 	$old_location = get_post_meta( $post->ID, 'tour_date_location', true );
 	
 	echo '<label for="tour_date_date"></label>';
-	echo '<input type="text" id="tour_date_date" name="tour_date_date" placeholder="YYYYMMDD" value="'.$old_date.'" size="20" /><br /><br />';
+	echo '<input type="text" class="date_input" id="tour_date_date" name="tour_date_date" placeholder="YYYYMMDD" value="'.$old_date.'" size="20" /><br /><br />';
 	
 	echo '<label for="tour_date_venue"></label>';
 	echo '<input type="text" id="tour_date_venue" name="tour_date_venue" placeholder="venue" value="'.$old_venue.'" size="50" /><br /><br />';
